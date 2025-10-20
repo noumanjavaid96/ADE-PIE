@@ -53,20 +53,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 scoreChange = clicks === 1 ? scoreActions[action].base : -2 * clicks;
                 logText = clicks === 1 ? scoreActions[action].text : `Re-watched video ${clicks} times`;
                 break;
+
             case 'answer-quiz':
-                const isCorrect = button.dataset.correct === 'true';
-                if (isCorrect) {
-                    scoreChange = scoreActions['answer-quiz-correct'].base;
-                    logText = scoreActions['answer-quiz-correct'].text;
-                } else {
-                    scoreChange = scoreActions['answer-quiz-incorrect'].base;
-                    logText = scoreActions['answer-quiz-incorrect'].text;
-                }
+                // This case now correctly handles the explicit data attributes
+                scoreChange = parseInt(button.dataset.points, 10);
+                logText = button.dataset.log;
                 break;
+
             case 'read-text':
                 scoreChange = scoreActions[action].base;
                 logText = scoreActions[action].text;
                 break;
+
             case 'ask-coach':
                 const keyword = button.dataset.keyword;
                 if (keyword === 'positive') {
