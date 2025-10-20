@@ -1,5 +1,5 @@
 # Final AI Admin Panel Integration Specification
-**Version:** 2.1
+**Version:** 2.2
 **Status:** Confirmed & Finalized
 
 **Preamble: Confirmation of Alignment (Meeting of October 17, 2025)**
@@ -50,7 +50,15 @@ This design enables the following clear workflows:
 
 *   **PIE Workflow:**
     1.  **Admin:** Creates a PIE block and writes a prompt asking the user to describe a workflow.
-    2.  **User:** Describes their workflow via text or voice.
+    2.  **User:** Describes their workflow via **text, voice, or document upload**.
     3.  **AI Action:** The PIE analyzes the input based on the rules in the `System Prompt` and provides a structured, predictable analysis back to Coach Klaus, who delivers it as conversational feedback.
+
+---
+#### **4. Critical Dependency Note: D-ID Integration**
+
+The implementation of the AI-driven conversational features (especially the PIE) is **critically dependent** on the outcome of the upcoming discussion with D-ID.
+
+*   **Core Requirement:** Our platform **must** be able to use its own custom RAG (Retrieval-Augmented Generation) system and a self-hosted LLM to generate responses. The Coach Klaus avatar from D-ID should only be responsible for the visual streaming and text-to-speech of the response text that our backend provides.
+*   **Contingency:** If D-ID's Agent SDK does not allow for the use of a custom RAG and requires us to use their internal knowledge base, it will not meet our data privacy and architectural requirements. This will require a re-evaluation of the avatar provider.
 
 This finalized specification provides a clear, robust, and controllable path to implementing the innovative AI features you envision.

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confidence Score UI Mock-up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Confidence Score Simulator</h1>
+        <div class="score-container">
+            <h2>Confidence Score: <span id="score-value">75</span></h2>
+            <div class="score-bar-container">
+                <div id="score-bar" class="score-bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main id="match-day-content">
+        <h2>Match Day: Introduction to Client Onboarding</h2>
+
+        <div class="content-block" id="block-1">
+            <h3>Step 1: Introduction Video</h3>
+            <p>User watches the "Intro to Onboarding" video.</p>
+            <button class="action-btn" data-action="watch-video" data-clicks="1">Watch Video (1st time)</button>
+        </div>
+
+        <div class="content-block" id="block-2">
+            <h3>Step 2 & 3: Quiz Question 1</h3>
+            <p>"What is the first step in client intake?"</p>
+            <button class="action-btn" data-action="answer-quiz" data-correct="false">Answer Incorrectly</button>
+            <button class="action-btn" data-action="answer-quiz" data-correct="true">Answer Correctly</button>
+        </div>
+
+        <div class="content-block" id="block-3">
+            <h3>Step 4: Read Text</h3>
+            <p>User reads a block of text about client communication.</p>
+            <button class="action-btn" data-action="read-text">Mark as Read</button>
+        </div>
+
+        <div class="content-block" id="block-4">
+            <h3>Step 5: Ask Coach a Question</h3>
+            <p>User clicks the coach to ask for help.</p>
+            <button class="action-btn" data-action="ask-coach" data-keyword="negative">Ask: "I don't get it..."</button>
+        </div>
+
+        <div class="content-block" id="block-5">
+            <h3>Step 6: Re-watch Video</h3>
+            <p>User is confused and re-watches the introduction video multiple times.</p>
+            <button class="action-btn" data-action="watch-video" data-clicks="3">Re-watch Video (3 times)</button>
+        </div>
+
+        <div class="content-block" id="block-6">
+            <h3>Step 7: Quiz Question 2</h3>
+            <p>"Which document is essential for GDPR?"</p>
+            <button class="action-btn" data-action="answer-quiz" data-correct="true">Answer Correctly (1st try)</button>
+        </div>
+
+        <div class="content-block" id="block-7">
+            <h3>Step 8: Ask Coach a "Smart" Question</h3>
+            <p>User asks a follow-up question to deepen their understanding.</p>
+            <button class="action-btn" data-action="ask-coach" data-keyword="positive">Ask: "How can I apply this...?"</button>
+        </div>
+    </main>
+
+    <aside id="action-log-container">
+        <h3>Action Log</h3>
+        <ul id="action-log">
+            <!-- Log items will be added here by JavaScript -->
+        </ul>
+        <button id="reset-btn">Reset Simulation</button>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
