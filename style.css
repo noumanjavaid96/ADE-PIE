@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    margin: 0 0 1.5rem 0;
+    color: #1a202c;
+    font-size: 1.75rem;
+}
+
+.score-container {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    border: 1px solid #e2e8f0;
+}
+
+.score-container h2 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.score-bar-container {
+    width: 100%;
+    background-color: #e2e8f0;
+    border-radius: 8px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.score-bar {
+    height: 100%;
+    width: 60%; /* Initial score */
+    background-color: #ecc94b; /* Yellow for mid-range score */
+    border-radius: 8px;
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.score-details {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    color: #4a5568;
+}
+
+.score-details strong {
+    color: #2d3748;
+}
+
+#match-day-content {
+    width: 60%;
+    max-width: 800px;
+}
+
+.content-block {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+.content-block h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+}
+
+.content-block p {
+    margin-bottom: 1rem;
+    color: #718096;
+    line-height: 1.6;
+}
+
+.action-btn {
+    background-color: #4a5568;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.action-btn:hover:not(:disabled) {
+    background-color: #2d3748;
+}
+
+.action-btn:disabled {
+    background-color: #cbd5e0;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#simulation-output {
+    width: 35%;
+    max-width: 450px;
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#coach-reaction-container, #action-log-container {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#coach-reaction-container h3, #action-log-container h3 {
+    margin-top: 0;
+    color: #2d3748;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+#coach-reaction-text {
+    font-style: italic;
+    color: #4a5568;
+    line-height: 1.6;
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0;
+}
+
+#action-log {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+#action-log li {
+    padding: 0.75rem;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 0.9rem;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f9fafb;
+}
+#action-log li:nth-child(even) {
+    background-color: #ffffff;
+}
+#action-log li:last-child {
+    border-bottom: none;
+}
+
+#action-log strong {
+    color: #2d3748;
+    font-weight: 700;
+}
+
+#reset-btn {
+    width: 100%;
+    margin-top: 0;
+    background-color: #718096;
+    color: white;
+    border: none;
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#reset-btn:hover {
+    background-color: #4a5568;
+}
+
+/* Main layout container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.main-content-area {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 2rem;
+    align-items: flex-start;
+}

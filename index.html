@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confidence Score Logic Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Confidence Score Simulator</h1>
+        <div class="score-container">
+            <h2>Confidence Score: <span id="score-value">60</span>%</h2>
+            <div class="score-bar-container">
+                <div id="score-bar" class="score-bar"></div>
+            </div>
+            <div class="score-details">
+                <span>Zone: <strong id="score-zone">3</strong></span>
+            </div>
+        </div>
+    </header>
+
+    <main id="match-day-content">
+        <h2>Match Day: Digital Document Workflow</h2>
+
+        <div class="content-block" id="block-1">
+            <h3>Step 1 – Intro Video</h3>
+            <p>Lisa watches the short introduction video carefully and says, "Okay, got it."</p>
+            <button class="action-btn" data-raw-value="65" data-coach-reaction="Great start, Lisa. Let’s dive into the first example.">Watch Video & Say "Okay, got it."</button>
+        </div>
+
+        <div class="content-block" id="block-2">
+            <h3>Step 2 – Task (Open Response)</h3>
+            <p>Lisa answers incorrectly and asks: “I don’t understand why that’s wrong – can you explain it again?”</p>
+            <button class="action-btn" data-raw-value="31" data-coach-reaction="No worries, that’s a common pitfall. Let me show you step by step.">Answer Incorrectly & Ask for Help</button>
+        </div>
+
+        <div class="content-block" id="block-3">
+            <h3>Step 3 – Quiz</h3>
+            <p>Lisa answers 2 of 3 questions correctly and says: “That makes more sense now, thanks.”</p>
+            <button class="action-btn" data-raw-value="58" data-coach-reaction="Nice work – you’re getting the hang of it!">Complete Quiz (2/3 Correct)</button>
+        </div>
+
+        <div class="content-block" id="block-4">
+            <h3>Step 4 – Branching Scenario</h3>
+            <p>Lisa chooses the wrong option first, then corrects herself and asks: “Would this be the same in the real process?”</p>
+            <button class="action-btn" data-raw-value="57" data-coach-reaction="Exactly – you’re thinking like a real process designer!">Navigate Branching Scenario</button>
+        </div>
+
+        <div class="content-block" id="block-5">
+            <h3>Step 5 – Process Designer</h3>
+            <p>Lisa builds the workflow correctly and asks a constructive follow-up: “Can we add a review step here?”</p>
+            <button class="action-btn" data-raw-value="69" data-coach-reaction="Excellent thinking – that’s a great addition to your workflow!">Design Workflow Correctly</button>
+        </div>
+
+        <div class="content-block" id="block-6">
+            <h3>Step 6 – Repeated Question (Uncertainty)</h3>
+            <p>Lisa asks again: “Can you explain that once more? I’m still not sure.”</p>
+            <button class="action-btn" data-raw-value="35" data-coach-reaction="All good – this topic often needs a second look. Let’s go through it slowly together.">Ask Again (Uncertain)</button>
+        </div>
+
+        <div class="content-block" id="block-7">
+            <h3>Step 7 – Review Task</h3>
+            <p>Lisa completes the review task correctly and says confidently: “Ah, now it finally makes sense.”</p>
+            <button class="action-btn" data-raw-value="62" data-coach-reaction="Perfect, now it clicks! That’s exactly what I wanted to see.">Complete Review Task Correctly</button>
+        </div>
+
+        <div class="content-block" id="block-8">
+            <h3>Step 8 – Reflection Question</h3>
+            <p>Lisa responds calmly: “I can explain it now – I just need a bit more practice for edge cases.”</p>
+            <button class="action-btn" data-raw-value="68" data-coach-reaction="That’s strong, Lisa. You’ve really understood the core idea.">Answer Reflection Question</button>
+        </div>
+
+        <div class="content-block" id="block-9">
+            <h3>Step 9 – Bonus Case (Challenge)</h3>
+            <p>Lisa accepts the optional pro-level task and completes it correctly.</p>
+            <button class="action-btn" data-raw-value="72" data-coach-reaction="Fantastic, Lisa – that’s expert-level thinking!">Complete Bonus Case</button>
+        </div>
+    </main>
+
+    <aside id="simulation-output">
+        <div id="coach-reaction-container">
+            <h3>Coach Klaus's Reaction:</h3>
+            <p id="coach-reaction-text">Awaiting first action...</p>
+        </div>
+        <div id="action-log-container">
+            <h3>Calculation Log</h3>
+            <ul id="action-log">
+                <!-- Log items will be added here by JavaScript -->
+            </ul>
+        </div>
+        <button id="reset-btn">Reset Simulation</button>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
