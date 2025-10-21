@@ -1,0 +1,132 @@
+﻿Story Title,Status,Priority,Sprint,Feature,Assignee,Due,Acceptance Criteria,Dependencies,Epic,QA Notes,User Story
+Interactive block: Video,Backlog,P2,Sprint 2 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%202%204796770e6a0e47b5ad32c15b6033eeef.md),,,,"- Inline video player with playback controls
+- Marks block completed when watched threshold reached
+- Handles network errors gracefully",,,,"As a learner, I want to watch instructional videos within a matchday."
+Progress tracking: Modules and Matchdays overview,Backlog,P1,Sprint 2 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%202%204796770e6a0e47b5ad32c15b6033eeef.md),,,,"- Modules list with progress per module
+- Matchdays screen shows total assigned, completed, remaining, and completion percentage
+- Data updates in real time after completion",,,,"As a user, I want to see module-level and matchday-level progress breakdown."
+Admin dashboard metrics overview,Backlog,P1,Sprint 1 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%201%2059c99bc25205430a8533fa838563e24e.md),,,,"- Dashboard shows Total Leagues, Total Modules, Total Matchdays, Published Content, Recent Leagues
+- Metrics load under 2s on first paint
+- Error states and empty states handled",,,,"As an admin, I want to view key platform metrics so I can understand current content and users at a glance."
+Onboarding sequence,Backlog,P2,Sprint 2 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%202%204796770e6a0e47b5ad32c15b6033eeef.md),,,,"- Multi-step onboarding with skip
+- Explains leagues, modules, matchdays, progress
+- Persist completion to not re-show",,,,"As a new user, I want a short onboarding so I understand how to use the app."
+Core matchday activities framework,Backlog,P0,Sprint 3 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%203%208a1b45bb32754b4884591bee529163ee.md),,,,"- Implement activity framework with pluggable block types
+- Each block saves state and completion
+- Themed UI consistent with scene",,,,"As a learner, I want core activity types like microlearning videos, quizzes, branching scenarios, drag and drop, matching, pinboards, process designer, simulation, and templates."
+Media library for uploads,Backlog,P2,Sprint 1 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%201%2059c99bc25205430a8533fa838563e24e.md),,,,"- Upload images, audio, video, pdf
+- File size and type validation
+- Show totals and basic metadata
+- Preview for common file types",,,,"As an admin, I want a file library to upload and reuse media across content."
+Admin user management,Backlog,P2,Sprint 1 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%201%2059c99bc25205430a8533fa838563e24e.md),,,,"- User list with search and pagination
+- View user details
+- Disable or reset password actions with confirmation
+- Activity logged",,,,"As an admin, I want to view and manage users so I can maintain accounts."
+Coach Klaus intro experience,Backlog,P2,Sprint 3 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%203%208a1b45bb32754b4884591bee529163ee.md),,,,"- HQ avatar with animations
+- Skip option not shown on first run but available after
+- Smooth transition into first activity",,,,"As a learner, I want an animated Coach Klaus introduction to guide me into the first activity."
+Interactive block: Quiz (single and multiple choice),Backlog,P1,Sprint 2 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%202%204796770e6a0e47b5ad32c15b6033eeef.md),,,,"- Supports single and multiple choice
+- Immediate correctness feedback
+- Records score and completion
+- Accessible via keyboard",,,,"As a learner, I want to answer single and multiple choice questions and receive feedback."
+League management CRUD,Backlog,P0,Sprint 1 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%201%2059c99bc25205430a8533fa838563e24e.md),,,,"- Create, read, update, delete for leagues
+- Nested management for modules, matchdays, content blocks
+- Validation on required fields
+- Audit timestamps captured",,,,"As an admin, I want to create and manage leagues, modules, matchdays, and content blocks."
+Progress tracking: Total Leagues,Backlog,P1,Sprint 2 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%202%204796770e6a0e47b5ad32c15b6033eeef.md),,,,"- Compute progress across modules
+- Visual progress bar matches computed percentage
+- Empty state when no progress",,,,"As a user, I want to see overall league progress with a clear progress bar."
+End-user authentication,Backlog,P0,Sprint 2 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%202%204796770e6a0e47b5ad32c15b6033eeef.md),,,,"- Sign up optional or off per config
+- Login with email and password
+- Error states for invalid login
+- Session handling and logout",,,,"As a user, I want to sign in securely so my progress is saved."
+Splash and home screens,Backlog,P3,Sprint 2 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%202%204796770e6a0e47b5ad32c15b6033eeef.md),,,,"- Splash shows brand and loads app
+- Home shows primary actions and navigation
+- Accessible on mobile and desktop",,,,"As a user, I want an engaging splash and a home screen to start learning."
+Admin authentication for secure access,Backlog,P0,Sprint 1 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%201%2059c99bc25205430a8533fa838563e24e.md),,,,"- Admin can log in with email and password
+- Invalid credentials show clear error
+- Passwords stored hashed
+- Successful login redirects to Dashboard
+- Session persists for configured duration",,,,"As an admin, I want to log in securely so that only authorized staff can access the admin panel."
+PIE submissions with AI feedback,Backlog,P1,Sprint 3 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%203%208a1b45bb32754b4884591bee529163ee.md),,,,"- Accept text, voice, document, and designer output
+- AI analyzes submission and returns weak points, recommendations, confidence score
+- Feedback displayed in themed console with Coach Klaus reinforcement",,,,"As a learner, I want to submit PIE artifacts and receive AI-driven feedback and a confidence score."
+Progress visualization: Radar/Dartboard,Backlog,P2,Sprint 5 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%205%2023b5bfc051324f4faace975c7acf6430.md),,,,"- Renders overall module and league progress
+- Updates after activity completion
+- Performs smoothly on target devices",,,,"As a learner, I want a radar or dartboard visual of module and league progression."
+QA: Performance and load validation,Backlog,P2,Sprint 7 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%207%20badde1af2ae947289fad21e783a73161.md),,,,"- Load test scenarios defined
+- Metrics within thresholds
+- Regressions reported and retested",,,,"As a team, we want to validate performance and animations under load."
+QA: Usability checks and final polish,Backlog,P2,Sprint 7 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%207%20badde1af2ae947289fad21e783a73161.md),,,,"- Heuristic evaluation completed
+- Issues triaged and fixed
+- Final responsive polish complete",,,,"As a team, we want usability checks on prompts, progression clarity, and feedback loops."
+Community: Post creation and rich text,Backlog,P2,Sprint 6 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%206%2060e81e267d26414ebf99e68db5a3718e.md),,,,"- Bold and lists supported
+- Image and file attachments
+- Clear success and error states",,,,"As a learner, I want to create posts with rich text and attachments."
+Responsive layouts and performance,Backlog,P1,Sprint 6 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%206%2060e81e267d26414ebf99e68db5a3718e.md),,,,"- Adaptive layouts desktop, tablet, mobile
+- Optimized assets and smooth execution
+- Mobile navigation with large tappable actions",,,,"As a learner, I want responsive layouts and optimized assets across devices."
+QA: End-to-end functional testing,Backlog,P1,Sprint 7 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%207%20badde1af2ae947289fad21e783a73161.md),,,,"- Test plan and checklist
+- Cross-device and cross-browser runs
+- Defects tracked with priorities",,,,"As a team, we want E2E tests covering learning activities, gamification, and community."
+Community: Topic-based forums,Backlog,P1,Sprint 6 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%206%2060e81e267d26414ebf99e68db5a3718e.md),,,,"- Create and view posts per module
+- Global view across modules
+- Pagination and timestamps",,,,"As a learner, I want module-specific discussion threads and an all-modules view."
+In-matchday progress tracker,Backlog,P2,Sprint 5 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%205%2023b5bfc051324f4faace975c7acf6430.md),,,,"- Visual tracker fills as steps complete
+- Syncs with activity state
+- Accessible labels for screen readers",,,,"As a learner, I want an in-matchday tracker like a play clock to see step completion."
+Personalized micro-lessons trigger logic,Backlog,P1,Sprint 4 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%204%2034711519aada4434989fac7639eef5e4.md),,,,"- Trigger after configurable error threshold or low confidence
+- Select focused content type (video, text, micro-quiz)
+- Records micro-lesson completion and effect on confidence",,,,"As a learner, I want micro-lessons to trigger after repeated errors or low confidence so I can improve targeted skills."
+Gamification: League theming progression,Backlog,P2,Sprint 4 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%204%2034711519aada4434989fac7639eef5e4.md),,,,"- Three environment tiers with distinct visuals
+- Upgrade triggers based on progress thresholds
+- Persisted and reversible for testing",,,,"As a learner, I want the environment to visually upgrade from Beginner to Expert as I progress."
+Game-like feedback loop integration,Backlog,P1,Sprint 5 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%205%2023b5bfc051324f4faace975c7acf6430.md),,,,"- Action → Feedback → Reward → Progress update
+- Non-blocking animations with haptics where available
+- Handles offline or failure gracefully",,,,"As a learner, I want immediate feedback, rewards, and updated progress after actions."
+In-scene delivery of micro-lessons,Backlog,P2,Sprint 4 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%204%2034711519aada4434989fac7639eef5e4.md),,,,"- Micro-lesson overlays within learning scene
+- Coach Klaus appears to explain and encourage
+- Return to prior activity on completion",,,,"As a learner, I want micro-lessons delivered in-scene without breaking flow."
+Community: Replies and nested discussions,Backlog,P2,Sprint 6 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%206%2060e81e267d26414ebf99e68db5a3718e.md),,,,"- Inline reply box
+- Nesting up to at least two levels
+- Visible timestamps and identity",,,,"As a learner, I want to reply inline with nested threads."
+User identity on posts,Backlog,P3,Sprint 6 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%206%2060e81e267d26414ebf99e68db5a3718e.md),,,,"- Show avatar, name, company or team badge
+- Themed to match immersive UI
+- Works across devices",,,,"As a learner, I want my avatar and team badge displayed with posts."
+Integrated themed UI components,Backlog,P2,Sprint 6 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%206%2060e81e267d26414ebf99e68db5a3718e.md),,,,"- Consistent design tokens
+- Animated buttons, themed modals, immersive alerts
+- Performance budget met",,,,"As a learner, I want buttons, notifications, and inputs to match the sports high-tech theme."
+Achievements and highlight wall,Backlog,P2,Sprint 4 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%204%2034711519aada4434989fac7639eef5e4.md),,,,"- Unlock animations with sound
+- Trophy wall stores earned items
+- Locked items shown greyed-out
+- Accessible UI",,,,"As a learner, I want to unlock achievements and view them on a trophy wall."
+Moderation: Edit and delete by admin,Backlog,P1,Sprint 6 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%206%2060e81e267d26414ebf99e68db5a3718e.md),,,,"- Admin-only edit and delete
+- Placeholder message on delete
+- Audit log entries",,,,"As an admin, I want to edit or delete inappropriate posts and replies."
+Credits and reward shop,Backlog,P1,Sprint 4 (The%20Forge%2021f9ae7944c6805fb0cfc2e8de231089/Sprints%20e2721efaa7de4b408a155fe7484eb190/Sprint%204%2034711519aada4434989fac7639eef5e4.md),,,,"- Earn credits for completion, scores, streaks
+- Shop lists rewards and handles purchases
+- Balance updates and persists",,,,"As a learner, I want to earn credits and redeem them in a themed shop."
+,,,,,,,"1. An admin login page exists at a dedicated URL (e.g., /admin). 2. Accepts email and password. 3. Shows an error for invalid credentials. 4. Redirects to the dashboard on successful login.",,Admin Experience,,
+,,,,,,,"1. Dashboard displays total leagues, modules, and users. 2. A list of recent content additions is visible.",,Admin Experience,,
+,,,,,,,1. Admin can create a new league with a name and description. 2. Admin can view a list of all leagues. 3. Admin can edit or delete an existing league.,,Admin Experience,,
+,,,,,,,"1. Admin can add a module to a specific league. 2. A module has a title, description, and order. 3. Admin can edit or delete a module.",,Admin Experience,,
+,,,,,,,1. Admin can add a Matchday to a specific module. 2. A Matchday has a title and a specific day number (1-10). 3. Admin can add/remove various content blocks to a Matchday.,,Admin Experience,,
+,,,,,,,"1. Learner login page exists. 2. Accepts email/password provided by an admin. 3. On first login, triggers the onboarding sequence.",,Learner Journey,,
+,,,,,,,"1. A visually engaging splash screen is displayed. 2. A short, skippable introductory animation or video plays. 3. The sequence sets the narrative tone of the platform.",,Learner Journey,,
+,,,,,,,1. A 'Total Leagues' screen shows progress through the entire program. 2. A 'Total Modules' screen shows progress within the current league. 3. A 'Matchdays Overview' screen shows completion percentage for the current module.,,Learner Journey,,
+,,,,,,,"1. Video plays within a themed, in-scene player. 2. The room lighting transitions to a 'dark mode' during playback. 3. Standard video controls (play, pause, volume) are available.",,Learner Journey,,
+,,,,,,,"1. Questions are presented on a themed surface (e.g., a virtual whiteboard). 2. User can select one (single-choice) or multiple (multiple-choice) answers. 3. Immediate feedback (correct/incorrect) is provided upon submission.",,Learner Journey,,
+,,,,,,,1. Drag & drop items snap to designated target zones. 2. Matching exercise pairs can be connected by clicking or dragging. 3. The system provides feedback on the correctness of the final arrangement.,,Learner Journey,,
+,,,,,,,1. Coach Klaus's avatar appears in a designated spot in the scene. 2. He delivers a pre-scripted welcome message relevant to the Matchday. 3. He may gesture towards the first activity to guide the user.,,Coach Klaus & AI,,
+,,,,,,,1. The system prepends persona-defining instructions to all prompts sent to the LLM. 2. The system maintains a 'Session Memory' of recent interactions to provide context. 3. The engine is hard-coded to use the Aleph Alpha model.,,Coach Klaus & AI,,
+,,,,,,,"1. The UI provides options for text, voice, and document uploads. 2. Voice input uses browser microphone and allows for review before submission. 3. Uploaded documents are sent to the PIE backend for processing.",,Process Intelligence Engine,,
+,,,,,,,"1. The ADE monitors for triggers: 3+ incorrect quiz attempts OR a Confidence Score below 40% OR 90 seconds of inactivity on an interactive element. 2. When triggered, Coach Klaus appears and offers an optional micro-lesson. 3. Declining the offer dismisses the prompt.",,Adaptive Decision Engine,,
+,,,,,,,"1. The micro-lesson (e.g., a short video or a text explanation) appears in a themed overlay or on a secondary screen within the scene. 2. The main activity is dimmed but remains in the background. 3. Completing the micro-lesson returns the user to the original activity.",,Adaptive Decision Engine,,
+,,,,,,,"1. An achievement is triggered upon completing a module, scoring 100% on a quiz, or maintaining a streak. 2. A visual 'toast' notification appears on screen announcing the unlocked badge. 3. The achievement is added to my profile's 'Highlight Wall'.",,Gamification,,
+,,,,,,,1. A dedicated 'Highlight Wall' or 'Trophy Case' section is accessible from my profile. 2. It displays all earned badges vibrantly. 3. It displays unearned badges as greyed-out silhouettes with a hint about how to earn them.,,Gamification,,
+,,,,,,,1. A 'Start Discussion' button is available within each module's community tab. 2. The post editor allows for a title and rich-text body. 3. The user can attach one image or file per post. 4. The post appears in the correct module forum upon submission.,,Community,,
+,,,,,,,1. All posts in a forum are visible in a threaded view. 2. A 'Reply' button is available on each post and reply. 3. Replies are nested visually under their parent post/reply.,,Community,,
+,,,,,,,"1. Admin users see a 'Delete' option on all posts and replies. 2. Clicking 'Delete' brings up a confirmation modal. 3. Upon confirmation, the content is replaced with a '[Content removed by moderator]' message.",,Admin & Moderation,,
+,,,,,,,"1. An API client is implemented to connect to the ExerlebenAI endpoint. 2. Key events (e.g., user login, quiz completion, PIE submission, ADE trigger) are sent to the logging service. 3. The integration is tested to ensure no data loss.",,Platform & Integration,,
+,,,,,,,1. A dedicated login for the 'Trainer' role exists. 2. The UI provides a form to enter scores and qualitative notes for each Taktikcheck dimension. 3. Submitting the form updates the specific learner's profile and initial Confidence Score.,,Taktikcheck,,
+,,,,,,,"1. The platform displays a schedule of upcoming calls. 2. A 'Join Call' button becomes active shortly before the start time. 3. Clicking the button launches an embedded video conferencing client (e.g., Zoom/Teams). 4. Admins have host/moderator privileges in the call.",,Community (New),,

@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Confidence Score Simulator</h1>
+        <h1>Confidence Score Simulator (Realistic MVP)</h1>
         <div class="score-container">
             <h2>Confidence Score: <span id="score-value">60</span>%</h2>
             <div class="score-bar-container">
@@ -21,60 +21,62 @@
     </header>
 
     <main id="match-day-content">
-        <h2>Match Day: Digital Document Workflow</h2>
-
-        <div class="content-block" id="block-1">
-            <h3>Step 1 – Intro Video</h3>
-            <p>Lisa watches the short introduction video carefully and says, "Okay, got it."</p>
-            <button class="action-btn" data-raw-value="65" data-coach-reaction="Great start, Lisa. Let’s dive into the first example.">Watch Video & Say "Okay, got it."</button>
+        <div class="simulation-controls">
+            <h2>Match Day: Digital Document Workflow</h2>
+            <div class="toggle-container">
+                <label for="preview-toggle">Preview Future Features</label>
+                <label class="switch">
+                    <input type="checkbox" id="preview-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         </div>
 
-        <div class="content-block" id="block-2">
-            <h3>Step 2 – Task (Open Response)</h3>
-            <p>Lisa answers incorrectly and asks: “I don’t understand why that’s wrong – can you explain it again?”</p>
-            <button class="action-btn" data-raw-value="31" data-coach-reaction="No worries, that’s a common pitfall. Let me show you step by step.">Answer Incorrectly & Ask for Help</button>
+        <div class="content-block" id="block-1" data-phase="mvp">
+            <div class="block-header">
+                <h3>Step 1: Watch Intro Video</h3>
+                <span class="phase-label phase-mvp">MVP</span>
+            </div>
+            <p>Lisa watches the short introduction video. The system logs that the video was completed.</p>
+            <button class="action-btn" data-raw-value="62" data-coach-reaction="Great, you've completed the video. Let's move on.">Mark Video as Watched</button>
         </div>
 
-        <div class="content-block" id="block-3">
-            <h3>Step 3 – Quiz</h3>
-            <p>Lisa answers 2 of 3 questions correctly and says: “That makes more sense now, thanks.”</p>
-            <button class="action-btn" data-raw-value="58" data-coach-reaction="Nice work – you’re getting the hang of it!">Complete Quiz (2/3 Correct)</button>
+        <div class="content-block" id="block-2" data-phase="mvp">
+            <div class="block-header">
+                <h3>Step 2: First Quiz Question</h3>
+                <span class="phase-label phase-mvp">MVP</span>
+            </div>
+            <p>Lisa answers the first question incorrectly.</p>
+            <button class="action-btn" data-raw-value="45" data-coach-reaction="That's not quite right. Give it another try.">Answer Incorrectly</button>
+            <p>After the incorrect answer, Lisa is prompted to either ask for help or try again.</p>
+            <button class="action-btn" data-raw-value="35" data-coach-reaction="No worries, that’s a common pitfall. Let me show you step by step.">Ask Coach for Help</button>
         </div>
 
-        <div class="content-block" id="block-4">
-            <h3>Step 4 – Branching Scenario</h3>
-            <p>Lisa chooses the wrong option first, then corrects herself and asks: “Would this be the same in the real process?”</p>
-            <button class="action-btn" data-raw-value="57" data-coach-reaction="Exactly – you’re thinking like a real process designer!">Navigate Branching Scenario</button>
+        <div class="content-block" id="block-3" data-phase="mvp">
+            <div class="block-header">
+                <h3>Step 3: Second Quiz Question</h3>
+                <span class="phase-label phase-mvp">MVP</span>
+            </div>
+            <p>Lisa answers the second question correctly on the first try.</p>
+            <button class="action-btn" data-raw-value="55" data-coach-reaction="Nice work – you’re getting the hang of it!">Answer Correctly</button>
         </div>
 
-        <div class="content-block" id="block-5">
-            <h3>Step 5 – Process Designer</h3>
-            <p>Lisa builds the workflow correctly and asks a constructive follow-up: “Can we add a review step here?”</p>
-            <button class="action-btn" data-raw-value="69" data-coach-reaction="Excellent thinking – that’s a great addition to your workflow!">Design Workflow Correctly</button>
+        <div class="content-block" id="block-4" data-phase="v2">
+            <div class="block-header">
+                <h3>Step 4: Branching Scenario</h3>
+                <span class="phase-label phase-v2">V2</span>
+            </div>
+            <p>Lisa chooses the wrong option first, then navigates back and chooses the correct one. The system detects this self-correction.</p>
+            <button class="action-btn" data-raw-value="58" data-coach-reaction="Good correction! Thinking through the process is key.">Self-Correct in Scenario</button>
         </div>
 
-        <div class="content-block" id="block-6">
-            <h3>Step 6 – Repeated Question (Uncertainty)</h3>
-            <p>Lisa asks again: “Can you explain that once more? I’m still not sure.”</p>
-            <button class="action-btn" data-raw-value="35" data-coach-reaction="All good – this topic often needs a second look. Let’s go through it slowly together.">Ask Again (Uncertain)</button>
-        </div>
-
-        <div class="content-block" id="block-7">
-            <h3>Step 7 – Review Task</h3>
-            <p>Lisa completes the review task correctly and says confidently: “Ah, now it finally makes sense.”</p>
-            <button class="action-btn" data-raw-value="62" data-coach-reaction="Perfect, now it clicks! That’s exactly what I wanted to see.">Complete Review Task Correctly</button>
-        </div>
-
-        <div class="content-block" id="block-8">
-            <h3>Step 8 – Reflection Question</h3>
-            <p>Lisa responds calmly: “I can explain it now – I just need a bit more practice for edge cases.”</p>
-            <button class="action-btn" data-raw-value="68" data-coach-reaction="That’s strong, Lisa. You’ve really understood the core idea.">Answer Reflection Question</button>
-        </div>
-
-        <div class="content-block" id="block-9">
-            <h3>Step 9 – Bonus Case (Challenge)</h3>
-            <p>Lisa accepts the optional pro-level task and completes it correctly.</p>
-            <button class="action-btn" data-raw-value="72" data-coach-reaction="Fantastic, Lisa – that’s expert-level thinking!">Complete Bonus Case</button>
+        <div class="content-block" id="block-5" data-phase="future">
+            <div class="block-header">
+                <h3>Step 5: Ask a Constructive Question</h3>
+                <span class="phase-label phase-future">Future</span>
+            </div>
+            <p>After completing a task, Lisa types a question into a text box: “Would this be the same in the real process?” The system analyzes the text and classifies it as a constructive question.</p>
+            <button class="action-btn" data-raw-value="65" data-coach-reaction="Excellent question. You’re thinking like a real process designer!">Submit Constructive Question</button>
         </div>
     </main>
 

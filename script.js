@@ -10,6 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const coachReactionTextEl = document.getElementById('coach-reaction-text');
     const actionButtons = document.querySelectorAll('.action-btn');
     const resetButton = document.getElementById('reset-btn');
+    const previewToggle = document.getElementById('preview-toggle');
+
+    /**
+     * Toggles the interactivity of content blocks based on their phase.
+     */
+    function updatePhaseInteractivity() {
+        const showAll = previewToggle.checked;
+        const contentBlocks = document.querySelectorAll('.content-block');
+
+        contentBlocks.forEach(block => {
+            const phase = block.dataset.phase;
+            if (phase !== 'mvp' && !showAll) {
+                block.classList.add('disabled-phase');
+            } else {
+                block.classList.remove('disabled-phase');
+            }
+        });
+    }
 
     /**
      * Calculates the confidence zone based on the score.
@@ -81,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         coachReactionTextEl.textContent = coachReaction;
         logCalculation(previousScore, rawValue, smoothedValue, finalScore);
 
-        // Disable button after use
+        // Disable button after use to prevent re-clicking
         button.disabled = true;
     }
 
@@ -102,6 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
         actionButtons.forEach(button => {
             button.disabled = false;
         });
+
+        // Also reset the toggle and phase interactivity
+        previewToggle.checked = false;
+        updatePhaseInteractivity();
     }
 
     // Attach event listeners
@@ -109,9 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', handleAction);
     });
     resetButton.addEventListener('click', resetSimulation);
+    previewToggle.addEventListener('change', updatePhaseInteractivity);
 
     // Initial setup
     updateScoreUI(initialScore);
+    updatePhaseInteractivity(); // Set initial state
     const li = document.createElement('li');
     li.textContent = 'Simulation started. Initial score: 60.';
     actionLogEl.appendChild(li);

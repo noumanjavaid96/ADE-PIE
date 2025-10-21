@@ -1,0 +1,12 @@
+﻿Item,Module,Design,Design Status,"Design Due Date ",Frontend Dev,Frontend Dev Status,Frontend Due Date,Backend Dev,Backend Dev Status,Backend Due Date,QA,QA Status,Notes
+"Authentication, Onboarding & Platform Entry",Authentication Onboarding,Zain,Done,,Tayyab Mughal,Done,16/09/2025 → 18/09/2025,Muhammad Faizan Nasir,Done,18/09/2025 → 22/09/2025,atif@renesistech.com,Done,
+Main Dashboard / Navigation Hub UI,Main Dashboard,Zain,Done,,Tayyab Mughal,Done,19/09/2025 → 20/09/2025,Muhammad Faizan Nasir,Done,03/10/2025 → 12/10/2025,atif@renesistech.com,Done,
+"Entering a ""Room"" ",Room,Zain,Done,,Tayyab Mughal,Done,23/09/2025 → 24/09/2025,Muhammad Faizan Nasir,Done,18/09/2025 → 22/09/2025,atif@renesistech.com,Done,
+"Matchday ",Matchday UI,Zain,Done,,Tayyab Mughal,Issue Found,24/09/2025 → 26/09/2025,Muhammad Faizan Nasir,Issue Found,23/09/2025 → 26/09/2025,atif@renesistech.com,Issue Found,
+"Transitions within a Matchday UI ",Transitions within a Matchday UI,Zain,Done,,Tayyab Mughal,Done,22/09/2025 → 26/09/2025,Muhammad Faizan Nasir,Done,23/09/2025 → 26/09/2025,atif@renesistech.com,Not started,
+Coach Klaus Interaction & Notebook,Coach Klaus,Zain,Done,,Tayyab Mughal,Not started,,Muhammad Faizan Nasir,In progress,03/10/2025 → 12/10/2025,atif@renesistech.com,Not started,
+Gamification & Progress Tracking,Gamification,Zain,Done,,Tayyab Mughal,Not started,13/10/2025 → 15/10/2025,Muhammad Faizan Nasir,Not started,13/10/2025 → 15/10/2025,atif@renesistech.com,Not started,
+Community,Community,Zain,Done,,Tayyab Mughal,Not started,20/10/2025 → 24/10/2025,Muhammad Faizan Nasir,Not started,20/10/2025 → 24/10/2025,atif@renesistech.com,Not started,
+Exiting a Match,Exiting a Matchday,Zain,Done,,Tayyab Mughal,Not started,27/10/2025 → 29/10/2025,Muhammad Faizan Nasir,Not started,27/10/2025 → 29/10/2025,atif@renesistech.com,Not started,
+General UI Element,General UI Elements,Zain,Done,,Tayyab Mughal,Not started,27/10/2025 → 29/10/2025,Muhammad Faizan Nasir,Not started,27/10/2025 → 29/10/2025,atif@renesistech.com,Not started,
+" Responsiveness",Responsiveness,Zain,Done,,Tayyab Mughal,Not started,27/10/2025 → 29/10/2025,Muhammad Faizan Nasir,Not started,,atif@renesistech.com,Not started,

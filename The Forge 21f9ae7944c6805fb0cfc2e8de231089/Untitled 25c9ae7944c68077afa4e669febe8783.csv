@@ -1,0 +1,159 @@
+﻿Feature Name,Module,User Story,Acceptance Criteria,Critical Questions & Ambiguities,Status,Assignee,Due
+Role-Based Access Control System,Authentication,"As a system administrator, I want to control user access to different features and content based on their roles so that I can maintain security and proper content access levels.","• System supports multiple user roles (Admin, Content Creator, Learner, etc.)
+• Each role has defined permissions for different system features
+• Role permissions can be modified by administrators
+• Access control is enforced at both UI and API levels
+• Role changes take effect immediately
+• System provides clear feedback when access is denied
+• Default roles are created during system initialization",,In QA,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza","September 9, 2025"
+User Session Management,Authentication,"As a logged-in user, I want my session to be securely managed so that my account remains protected while providing a seamless user experience.","• User sessions are created upon successful login
+• Sessions automatically expire after defined inactivity period
+• Users can manually log out to end their session
+• Session tokens are securely generated and stored
+• Sessions are invalidated when password is changed
+• Secure session cookies with appropriate flags (HttpOnly, Secure, SameSite)","• What should be the default session timeout duration?
+• Should we allow multiple concurrent sessions per user?
+• How should we handle session conflicts across devices?
+• Do we need session refresh tokens for extended access?
+• Should we implement session hijacking protection mechanisms?",In QA,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza","October 12, 2025"
+Password Recovery System,Authentication,"As a user who has forgotten my password, I want to reset it using my email address so that I can regain access to my account.","• User can request password reset by entering email address
+• System sends password reset email with secure token
+• Reset token expires after a defined time period
+• User can set new password using the reset link
+• New password must meet complexity requirements
+• Old password is invalidated after successful reset
+","• What should be the expiration time for password reset tokens?
+• Should we limit the number of password reset requests per day?
+• Do we need to invalidate all existing sessions after password reset?
+• Should we send notification emails for password changes?
+• What security measures should we implement for the reset process?",In QA,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza","October 12, 2025"
+User Login System,Authentication,"As a registered user, I want to log into my account using my email and password so that I can access my personalized learning dashboard.","• User can enter email and password on login form
+• System validates credentials against stored user data
+• User is redirected to dashboard upon successful login
+• User session is created and maintained
+• Error message is displayed for invalid credentials
+","• How many failed login attempts should trigger account lockout?
+• What should be the session timeout duration?
+• Should we implement 'Remember Me' functionality?
+• Do we need two-factor authentication for enhanced security?
+• Should we log IP addresses for security auditing?",In QA,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza","October 12, 2025"
+The Personalized 'Micro-Lesson',AI Coach,"As a Learner, I want to receive personalized micro-lessons based on my specific knowledge gaps so that I can quickly understand and master the tactical concepts I'm struggling with.","[ ] Content is concise and focused on specific tactical concepts
+[ ] System tracks learner engagement and completion of micro-lessons
+[ ] Learner can access micro-lessons immediately after quiz failure
+[ ] System provides progress indicators for micro-lesson completion
+","1. What constitutes an optimal length for a micro-lesson (time/content wise)?
+2. How will the system personalize content for different learning styles?
+3. What content authoring tools will create and maintain micro-lessons?
+4. How will micro-lessons be tagged and organized for efficient retrieval?
+5. Should micro-lessons be dynamically generated or pre-authored?
+6. What multimedia elements will be most effective for tactical concept explanation?
+7. How will the system measure and improve micro-lesson effectiveness?
+8. Should learners be able to request additional micro-lessons on topics?
+9. How will micro-lessons integrate with the broader course curriculum?
+10. What accessibility features are needed for diverse learner populations?",Backlog,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid","October 22, 2025"
+AI Coach Intervenes (Knowledge Graph),AI Coach,"As an AI Coach, I want to analyze failed quiz questions using the Knowledge Graph so that I can identify the specific tactical concepts (conceptIds) that need reinforcement and provide targeted learning interventions.","[ ] System prioritizes concepts based on their importance and learner's current level
+[ ] AI Coach considers learner's historical performance and learning patterns
+[ ] AI Coach provides confidence scores for its recommendations (given the logic is provided @Kristian Erxleben )","1. How will the Knowledge Graph structure tactical concepts and their relationships?
+2. What algorithm will the AI Coach use to traverse the Knowledge Graph?
+3. How will the system handle cases where multiple concepts are involved in a single question?
+4. What machine learning models will power the AI Coach's decision-making?
+5. How will the Knowledge Graph be updated as new tactical concepts are added?
+6. What confidence thresholds will trigger different types of interventions?
+7. How will the AI Coach balance immediate needs vs. long-term learning goals?
+8. What data will be used to train and validate the AI Coach's recommendations?
+9. How will the system handle edge cases where the Knowledge Graph is incomplete?
+10. What feedback mechanisms will improve the AI Coach's performance over time?",Backlog,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid","October 25, 2025"
+The Learner Struggles (Quiz Fail),Learning,"As a Learner, when I fail a quiz, I want the system to capture detailed information about my mistakes so that the AI Coach can provide targeted interventions and personalized learning recommendations.","
+[ ] System captures which specific questions were answered incorrectly
+[ ] System records the learner's incorrect answers for analysis
+[ ] System provides immediate feedback to learner about failed areas
+[ ] System triggers the AI Coach intervention workflow automatically","1. What constitutes a 'quiz fail' - specific percentage threshold or other criteria?
+2. How granular should the concept mapping be for failed questions?
+3. Should the system allow multiple attempts before triggering AI intervention?
+4. What data structure will store the relationship between questions and concepts?
+5. How will the system handle partial credit or nuanced wrong answers?
+6. Should failure patterns be analyzed across individual learners or cohorts?
+7. What privacy considerations apply to storing detailed failure data?
+8. How will the system differentiate between careless mistakes and knowledge gaps?
+9. Should there be different failure thresholds for different types of content?
+10. How will the system handle technical failures vs. knowledge-based failures?",Backlog,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid","October 28, 2025"
+The Process Intelligence Engine,Process Intelligence,"As a Learner, I want the Process Intelligence Engine to analyze real-world tactical scenarios and generate actionable coaching checklists so that I can apply my theoretical knowledge to practical situations.","[ ] System analyzes real-world Legal scenarios using LLM
+[ ] Engine generates actionable coaching checklists based on scenario analysis
+[ ] Checklists are personalized to the learner's specific knowledge gaps
+[ ] System provides context and reasoning for each checklist item
+[ ] Generated checklists are practical and implementable  (outside of the platform)
+[ ] Engine learns from feedback to improve future recommendations by the notes added by Learner during Reflection Session (ref 4.7 UI immersive doc)
+[ ] Pinboard notes (taken by the user during Session) are saved and can be referenced during actual coaching sessions in Match Day Summaries","1. What LLM model will power the Process Intelligence Engine analysis?
+2. How will the system identify and source real-world tactical scenarios?
+3. What prompt engineering approach will generate high-quality checklists?
+4. How will the system validate that generated checklists are tactically sound?
+5. What safety measures will prevent inappropriate or incorrect tactical advice?
+6. How will the engine personalize checklists based on learner's specific weaknesses?
+7. What feedback mechanisms will improve the quality of generated recommendations?
+8. How will the system handle edge cases where scenarios are too complex or ambiguous?
+9. What integration points exist with existing coaching tools and methodologies?
+10. How will the system measure the real-world effectiveness of generated checklists?",Backlog,"Nouman Javaid, Muhammad Irtaza, Muhammad Faizan Nasir, Tayyab Mughal","October 20, 2025"
+Platform Analytics Dashboard,Course Management,"As a super admin, I want comprehensive analytics on platform usage, course performance, and user engagement.","[ ] Display platform-wide usage statistics
+[ ]  Google Analytics will be integrated to observe Platform specific stats.",,Backlog,"Nouman Javaid, Muhammad Irtaza, Muhammad Faizan Nasir, Tayyab Mughal","November 11, 2025"
+View Student Progress,Course Management,"As an admin, I want to monitor individual student progress and performance across courses.","[ ] Display student list with enrollment status
+[ ] Show individual student progress percentages
+[ ] Display MatchDay scores and Summaries ",,Backlog,"Nouman Javaid, Muhammad Irtaza, Muhammad Faizan Nasir, Tayyab Mughal","November 21, 2025"
+The League Assignment,Learning,"As a Learner, I want to be automatically assigned to an appropriate league based on my Taktikcheck performance so that I receive learning content and challenges that match my current skill level.","[ ] League assignment considers both overall score and individual concept performance
+[ ] System displays the assigned league prominently to the learner
+[ ] League assignment includes clear explanation of what the league represents Modules the Learner qualifies for.
+[ ] Learner can view league-specific learning paths and content assigned by Admin.","1. How many leagues should the system support (e.g., Bronze, Silver, Gold, Platinum)?
+2. What scoring thresholds determine league boundaries?
+3. Should league assignment be based on overall score or weighted concept scores?
+4. How often can learners be reassigned to different leagues?
+5. Should there be a probationary period before league changes take effect?
+6. What happens if a learner's performance drops significantly?
+7. Should leagues have names that relate to football (e.g., Sunday League, Championship, Premier)?
+8. How will the system handle new learners who haven't taken assessments yet?
+9. Should there be social features that allow learners to see others in their league?
+10. What visual indicators and badges will represent different leagues?",Backlog,"Muhammad Faizan Nasir, Tayyab Mughal","November 2, 2025"
+The Dartboard League,Taktikcheck,"As a Learner, I want to see an engaging dartboard visualization of my Taktikcheck results so that I can easily understand my performance across different tactical concepts and feel motivated to improve.","[ ] System displays a dartboard visualization after Taktikcheck completion
+[ ] Each segment of the dartboard represents a different tactical concept
+[ ] Segment colors indicate performance level (red=poor, yellow=average, green=excellent)
+","1. How should the dartboard animation be implemented (CSS, Canvas, or external library)?
+2. What color scheme and visual design will be most engaging for learners?
+3. How many tactical concepts should be represented on the dartboard?
+4. Should the dartboard size and segment arrangement be configurable?
+5. What performance thresholds determine the color coding of segments?
+6. How will the system handle cases where learners have identical scores?
+7. Should there be sound effects or other audio feedback during the animation?
+8. What accessibility considerations are needed for visually impaired users?
+9. How will the dartboard display work on different screen sizes and devices?
+10. Should learners be able to customize the appearance of their dartboard?",Backlog,"Muhammad Faizan Nasir, Tayyab Mughal","November 2, 2025"
+The Administrator Builds the Course,Course Management,"As an Administrator, I want to build a comprehensive form for assessing learners can systematically develop their tactical understanding through structured lessons and assessments.",[ ] Questionnaire can be created Including rating based questions (ONLY),"1. What content authoring tools will be provided for course creation?
+2. Should the system support collaborative course building by multiple administrators?
+3. What file formats and sizes will be supported for multimedia content?
+4. How will version control be handled for course updates?
+5. What approval workflow is needed before course publication?
+6. Should there be templates or wizards to guide course creation?
+7. How will course analytics and learner feedback influence course updates?
+8. What accessibility standards must the course content meet?
+9. How will courses be categorized and tagged for easy discovery?
+10. What backup and recovery mechanisms are needed for course content?",Backlog,"Muhammad Faizan Nasir, Tayyab Mughal","November 2, 2025"
+Course Enrollment,Course Management,"As a admin, I want to enroll in courses so I can access the learning content.","[ ] Add MatchDay to user's dashboard immediately
+",,Done,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid","September 29, 2025"
+Course Preview & Details,Course Management,"As a learner, I want to preview course content, and (if any) instructions before starting.","[ ] Display comprehensive course overview page
+[ ] Show course intro preview (if added) video
+[ ] Display course duration and difficulty level",,In Progress,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid","September 9, 2025"
+Create Course Structure,Course Management,"As an admin, I want to create MatchDays, modules.","[ ] Create MatchDays with basic information (title, description, category)
+[ ] Add course modules and organize lessons
+[ ] Configure enrollment settings (Only Modules / MatchDays)",,Done,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid","September 11, 2025"
+Upload Course Content,Course Management,"As an admin, I want to upload videos, documents, images, and interactive content.","[ ] Support multiple file formats (MP4, PDF, YT link, Webm .)
+[ ] Implement drag-and-drop file upload
+[ ] Implement file compression and optimization (through Cloudinary)
+[ ] Add content preview functionality (Later On)",,Done,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid","October 14, 2025"
+Personal Dashboard,Course Management,"As a learner, I want a dashboard showing my assigned Modules by admin","[ ] Display enrolled Modules with progress indicators
+[ ] Show course completion Stats
+[ ] Display learning achievements (badges and trophies)
+[ ] Display overall learning progress metrics",,In QA,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza","September 23, 2025"
+User Role Management,Course Management,"As a super admin, I want to create, modify, and assign user roles and permissions.","[ ] Create custom user roles with specific permissions
+[ ] Add role-based access control to all features
+",,Done,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza","August 29, 2025"
+Profile Management,Course Management,"As a learner, I want to manage my profile, preferences, and account settings.","[ ] Edit personal information (name, email, bio)
+[ ] Upload and manage profile picture
+[ ] Change password and security settings
+",,In QA,"Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza","September 16, 2025"

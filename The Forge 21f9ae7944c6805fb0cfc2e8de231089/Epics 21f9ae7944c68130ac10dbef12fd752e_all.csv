@@ -1,0 +1,168 @@
+﻿Feature Name,Acceptance Criteria,Assignee,Comments/Feedback,Critical Questions & Ambiguities,Due,Epic,Module,Sprint,Status,User Story
+User Login System,"• User can enter email and password on login form
+• System validates credentials against stored user data
+• User is redirected to dashboard upon successful login
+• User session is created and maintained
+• Error message is displayed for invalid credentials
+","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza",,"• How many failed login attempts should trigger account lockout?
+• What should be the session timeout duration?
+• Should we implement 'Remember Me' functionality?
+• Do we need two-factor authentication for enhanced security?
+• Should we log IP addresses for security auditing?","October 12, 2025",Untitled (https://www.notion.so/21ba91a7eae6815fb2eae9e0aafb073a?pvs=21),Authentication,,In QA,"As a registered user, I want to log into my account using my email and password so that I can access my personalized learning dashboard."
+Password Recovery System,"• User can request password reset by entering email address
+• System sends password reset email with secure token
+• Reset token expires after a defined time period
+• User can set new password using the reset link
+• New password must meet complexity requirements
+• Old password is invalidated after successful reset
+","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza",,"• What should be the expiration time for password reset tokens?
+• Should we limit the number of password reset requests per day?
+• Do we need to invalidate all existing sessions after password reset?
+• Should we send notification emails for password changes?
+• What security measures should we implement for the reset process?","October 12, 2025",Untitled (https://www.notion.so/21ba91a7eae6815fb2eae9e0aafb073a?pvs=21),Authentication,,In QA,"As a user who has forgotten my password, I want to reset it using my email address so that I can regain access to my account."
+The League Assignment,"[ ] League assignment considers both overall score and individual concept performance
+[ ] System displays the assigned league prominently to the learner
+[ ] League assignment includes clear explanation of what the league represents Modules the Learner qualifies for.
+[ ] Learner can view league-specific learning paths and content assigned by Admin.","Muhammad Faizan Nasir, Tayyab Mughal","All Learners have access to all Modules. ","1. How many leagues should the system support (e.g., Bronze, Silver, Gold, Platinum)?
+2. What scoring thresholds determine league boundaries?
+3. Should league assignment be based on overall score or weighted concept scores?
+4. How often can learners be reassigned to different leagues?
+5. Should there be a probationary period before league changes take effect?
+6. What happens if a learner's performance drops significantly?
+7. Should leagues have names that relate to football (e.g., Sunday League, Championship, Premier)?
+8. How will the system handle new learners who haven't taken assessments yet?
+9. Should there be social features that allow learners to see others in their league?
+10. What visual indicators and badges will represent different leagues?","November 2, 2025",Untitled (https://www.notion.so/21ba91a7eae6814a9767c2f2a971d544?pvs=21),Learning,,Backlog,"As a Learner, I want to be automatically assigned to an appropriate league based on my Taktikcheck performance so that I receive learning content and challenges that match my current skill level."
+The Administrator Builds the Course,[ ] Questionnaire can be created Including rating based questions (ONLY),"Muhammad Faizan Nasir, Tayyab Mughal",,"1. What content authoring tools will be provided for course creation?
+2. Should the system support collaborative course building by multiple administrators?
+3. What file formats and sizes will be supported for multimedia content?
+4. How will version control be handled for course updates?
+5. What approval workflow is needed before course publication?
+6. Should there be templates or wizards to guide course creation?
+7. How will course analytics and learner feedback influence course updates?
+8. What accessibility standards must the course content meet?
+9. How will courses be categorized and tagged for easy discovery?
+10. What backup and recovery mechanisms are needed for course content?","November 2, 2025",Untitled (https://www.notion.so/21ba91a7eae6814a9767c2f2a971d544?pvs=21),Course Management,,Backlog,"As an Administrator, I want to build a comprehensive form for assessing learners can systematically develop their tactical understanding through structured lessons and assessments."
+Role-Based Access Control System,"• System supports multiple user roles (Admin, Content Creator, Learner, etc.)
+• Each role has defined permissions for different system features
+• Role permissions can be modified by administrators
+• Access control is enforced at both UI and API levels
+• Role changes take effect immediately
+• System provides clear feedback when access is denied
+• Default roles are created during system initialization","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza","09/10 LS: do you have any API Documentation yet? If I want to add a user via API - is it possible already?
+
+Add Function: Change role of user via Admin panel, Change status of users (now: only active) ",,"September 9, 2025",Untitled (https://www.notion.so/21ba91a7eae6815fb2eae9e0aafb073a?pvs=21),Authentication,,In QA,"As a system administrator, I want to control user access to different features and content based on their roles so that I can maintain security and proper content access levels."
+The Personalized 'Micro-Lesson',"[ ] Content is concise and focused on specific tactical concepts
+[ ] System tracks learner engagement and completion of micro-lessons
+[ ] Learner can access micro-lessons immediately after quiz failure
+[ ] System provides progress indicators for micro-lesson completion
+","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid",,"1. What constitutes an optimal length for a micro-lesson (time/content wise)?
+2. How will the system personalize content for different learning styles?
+3. What content authoring tools will create and maintain micro-lessons?
+4. How will micro-lessons be tagged and organized for efficient retrieval?
+5. Should micro-lessons be dynamically generated or pre-authored?
+6. What multimedia elements will be most effective for tactical concept explanation?
+7. How will the system measure and improve micro-lesson effectiveness?
+8. Should learners be able to request additional micro-lessons on topics?
+9. How will micro-lessons integrate with the broader course curriculum?
+10. What accessibility features are needed for diverse learner populations?","October 22, 2025",Untitled (https://www.notion.so/21ba91a7eae6813a9349e9a9bd340ed2?pvs=21),AI Coach,,Backlog,"As a Learner, I want to receive personalized micro-lessons based on my specific knowledge gaps so that I can quickly understand and master the tactical concepts I'm struggling with."
+The Process Intelligence Engine,"[ ] System analyzes real-world Legal scenarios using LLM
+[ ] Engine generates actionable coaching checklists based on scenario analysis
+[ ] Checklists are personalized to the learner's specific knowledge gaps
+[ ] System provides context and reasoning for each checklist item
+[ ] Generated checklists are practical and implementable  (outside of the platform)
+[ ] Engine learns from feedback to improve future recommendations by the notes added by Learner during Reflection Session (ref 4.7 UI immersive doc)
+[ ] Pinboard notes (taken by the user during Session) are saved and can be referenced during actual coaching sessions in Match Day Summaries","Nouman Javaid, Muhammad Irtaza, Muhammad Faizan Nasir, Tayyab Mughal",,"1. What LLM model will power the Process Intelligence Engine analysis?
+2. How will the system identify and source real-world tactical scenarios?
+3. What prompt engineering approach will generate high-quality checklists?
+4. How will the system validate that generated checklists are tactically sound?
+5. What safety measures will prevent inappropriate or incorrect tactical advice?
+6. How will the engine personalize checklists based on learner's specific weaknesses?
+7. What feedback mechanisms will improve the quality of generated recommendations?
+8. How will the system handle edge cases where scenarios are too complex or ambiguous?
+9. What integration points exist with existing coaching tools and methodologies?
+10. How will the system measure the real-world effectiveness of generated checklists?","October 20, 2025",Untitled (https://www.notion.so/21ba91a7eae681bd92dbe9f6e193a1be?pvs=21),Process Intelligence,,Backlog,"As a Learner, I want the Process Intelligence Engine to analyze real-world tactical scenarios and generate actionable coaching checklists so that I can apply my theoretical knowledge to practical situations."
+The Dartboard League,"[ ] System displays a dartboard visualization after Taktikcheck completion
+[ ] Each segment of the dartboard represents a different tactical concept
+[ ] Segment colors indicate performance level (red=poor, yellow=average, green=excellent)
+","Muhammad Faizan Nasir, Tayyab Mughal","@Kristian Erxleben  @Leonie Schmidt
+
+The logic for Taktikcheck average calcultion need to be provided.","1. How should the dartboard animation be implemented (CSS, Canvas, or external library)?
+2. What color scheme and visual design will be most engaging for learners?
+3. How many tactical concepts should be represented on the dartboard?
+4. Should the dartboard size and segment arrangement be configurable?
+5. What performance thresholds determine the color coding of segments?
+6. How will the system handle cases where learners have identical scores?
+7. Should there be sound effects or other audio feedback during the animation?
+8. What accessibility considerations are needed for visually impaired users?
+9. How will the dartboard display work on different screen sizes and devices?
+10. Should learners be able to customize the appearance of their dartboard?","November 2, 2025",Untitled (https://www.notion.so/21ba91a7eae6814a9767c2f2a971d544?pvs=21),Taktikcheck,,Backlog,"As a Learner, I want to see an engaging dartboard visualization of my Taktikcheck results so that I can easily understand my performance across different tactical concepts and feel motivated to improve."
+The Learner Struggles (Quiz Fail),"
+[ ] System captures which specific questions were answered incorrectly
+[ ] System records the learner's incorrect answers for analysis
+[ ] System provides immediate feedback to learner about failed areas
+[ ] System triggers the AI Coach intervention workflow automatically","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid",,"1. What constitutes a 'quiz fail' - specific percentage threshold or other criteria?
+2. How granular should the concept mapping be for failed questions?
+3. Should the system allow multiple attempts before triggering AI intervention?
+4. What data structure will store the relationship between questions and concepts?
+5. How will the system handle partial credit or nuanced wrong answers?
+6. Should failure patterns be analyzed across individual learners or cohorts?
+7. What privacy considerations apply to storing detailed failure data?
+8. How will the system differentiate between careless mistakes and knowledge gaps?
+9. Should there be different failure thresholds for different types of content?
+10. How will the system handle technical failures vs. knowledge-based failures?","October 28, 2025",Untitled (https://www.notion.so/21ba91a7eae6813a9349e9a9bd340ed2?pvs=21),Learning,,Backlog,"As a Learner, when I fail a quiz, I want the system to capture detailed information about my mistakes so that the AI Coach can provide targeted interventions and personalized learning recommendations."
+AI Coach Intervenes (Knowledge Graph),"[ ] System prioritizes concepts based on their importance and learner's current level
+[ ] AI Coach considers learner's historical performance and learning patterns
+[ ] AI Coach provides confidence scores for its recommendations (given the logic is provided @Kristian Erxleben )","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid",,"1. How will the Knowledge Graph structure tactical concepts and their relationships?
+2. What algorithm will the AI Coach use to traverse the Knowledge Graph?
+3. How will the system handle cases where multiple concepts are involved in a single question?
+4. What machine learning models will power the AI Coach's decision-making?
+5. How will the Knowledge Graph be updated as new tactical concepts are added?
+6. What confidence thresholds will trigger different types of interventions?
+7. How will the AI Coach balance immediate needs vs. long-term learning goals?
+8. What data will be used to train and validate the AI Coach's recommendations?
+9. How will the system handle edge cases where the Knowledge Graph is incomplete?
+10. What feedback mechanisms will improve the AI Coach's performance over time?","October 25, 2025",Untitled (https://www.notion.so/21ba91a7eae6813a9349e9a9bd340ed2?pvs=21),AI Coach,,Backlog,"As an AI Coach, I want to analyze failed quiz questions using the Knowledge Graph so that I can identify the specific tactical concepts (conceptIds) that need reinforcement and provide targeted learning interventions."
+User Session Management,"• User sessions are created upon successful login
+• Sessions automatically expire after defined inactivity period
+• Users can manually log out to end their session
+• Session tokens are securely generated and stored
+• Sessions are invalidated when password is changed
+• Secure session cookies with appropriate flags (HttpOnly, Secure, SameSite)","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza",,"• What should be the default session timeout duration?
+• Should we allow multiple concurrent sessions per user?
+• How should we handle session conflicts across devices?
+• Do we need session refresh tokens for extended access?
+• Should we implement session hijacking protection mechanisms?","October 12, 2025",Untitled (https://www.notion.so/21ba91a7eae6815fb2eae9e0aafb073a?pvs=21),Authentication,,In QA,"As a logged-in user, I want my session to be securely managed so that my account remains protected while providing a seamless user experience."
+Platform Analytics Dashboard,"[ ] Display platform-wide usage statistics
+[ ]  Google Analytics will be integrated to observe Platform specific stats.","Nouman Javaid, Muhammad Irtaza, Muhammad Faizan Nasir, Tayyab Mughal",,,"November 11, 2025",Untitled (https://www.notion.so/21ba91a7eae681bd92dbe9f6e193a1be?pvs=21),Course Management,,Backlog,"As a super admin, I want comprehensive analytics on platform usage, course performance, and user engagement."
+View Student Progress,"[ ] Display student list with enrollment status
+[ ] Show individual student progress percentages
+[ ] Display MatchDay scores and Summaries ","Nouman Javaid, Muhammad Irtaza, Muhammad Faizan Nasir, Tayyab Mughal",,,"November 21, 2025",Untitled (https://www.notion.so/21ba91a7eae681bd92dbe9f6e193a1be?pvs=21),Course Management,,Backlog,"As an admin, I want to monitor individual student progress and performance across courses."
+Upload Course Content,"[ ] Support multiple file formats (MP4, PDF, YT link, Webm .)
+[ ] Implement drag-and-drop file upload
+[ ] Implement file compression and optimization (through Cloudinary)
+[ ] Add content preview functionality (Later On)","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid","09/10 LS: We need to discuss on using cloudinary. This is a US system and is not really GDPR compliant (only in enterprise mode, which is of really high cost). We were thinking on using the media storage on our Hetzner server for this.
+GDPR is of HIGH importance for us & our customers!!",,"October 14, 2025",Untitled (https://www.notion.so/21da91a7eae6811aab59fed5c521438f?pvs=21),Course Management,,Done,"As an admin, I want to upload videos, documents, images, and interactive content."
+Personal Dashboard,"[ ] Display enrolled Modules with progress indicators
+[ ] Show course completion Stats
+[ ] Display learning achievements (badges and trophies)
+[ ] Display overall learning progress metrics","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza",09/10 LS: Score card & Award room is stil status 404.,,"September 23, 2025",Untitled (https://www.notion.so/21ba91a7eae6815fb2eae9e0aafb073a?pvs=21),Course Management,,In QA,"As a learner, I want a dashboard showing my assigned Modules by admin"
+Course Preview & Details,"[ ] Display comprehensive course overview page
+[ ] Show course intro preview (if added) video
+[ ] Display course duration and difficulty level","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid",,,"September 9, 2025",Untitled (https://www.notion.so/21da91a7eae6811aab59fed5c521438f?pvs=21),Course Management,,In Progress,"As a learner, I want to preview course content, and (if any) instructions before starting."
+Create Course Structure,"[ ] Create MatchDays with basic information (title, description, category)
+[ ] Add course modules and organize lessons
+[ ] Configure enrollment settings (Only Modules / MatchDays)","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid",,,"September 11, 2025",Untitled (https://www.notion.so/21da91a7eae6811aab59fed5c521438f?pvs=21),Course Management,,Done,"As an admin, I want to create MatchDays, modules."
+User Role Management,"[ ] Create custom user roles with specific permissions
+[ ] Add role-based access control to all features
+","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza","09/10 LS: As mailto:admin@forge.com I can only set the User role by adding a new user.
+I want to change this in the user management.
+I can only see  Role: User(Lawyer) - how can I add new User rols as super admin?
+The status is not done here.",,"August 29, 2025",Untitled (https://www.notion.so/21ba91a7eae6815fb2eae9e0aafb073a?pvs=21),Course Management,,Done,"As a super admin, I want to create, modify, and assign user roles and permissions."
+Course Enrollment,"[ ] Add MatchDay to user's dashboard immediately
+","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza, Nouman Javaid",,,"September 29, 2025",Untitled (https://www.notion.so/21da91a7eae6811aab59fed5c521438f?pvs=21),Course Management,,Done,"As a admin, I want to enroll in courses so I can access the learning content."
+Profile Management,"[ ] Edit personal information (name, email, bio)
+[ ] Upload and manage profile picture
+[ ] Change password and security settings
+","Muhammad Faizan Nasir, Tayyab Mughal, Muhammad Irtaza","09/10 LS: Logging into https://dev-forge-fe.rtdemolab.com/profile I can not manage my prfile/ picture/ bio.
+Change password & security settings should be prioritized!",,"September 16, 2025",Untitled (https://www.notion.so/21ba91a7eae6815fb2eae9e0aafb073a?pvs=21),Course Management,,In QA,"As a learner, I want to manage my profile, preferences, and account settings."
