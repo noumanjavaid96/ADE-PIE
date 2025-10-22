@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipedream Workflow Validation UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pipedream Workflow Validation UI</h1>
+            <p>Send a test event to the Confidence Score workflow and see the generated coaching response.</p>
+        </header>
+
+        <main>
+            <form id="event-form">
+                <div class="form-group">
+                    <label for="userId">User ID</label>
+                    <input type="text" id="userId" name="userId" value="user_test_001" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventType">Event Type</label>
+                    <select id="eventType" name="eventType" required>
+                        <option value="QUIZ_ANSWERED">Quiz Answered</option>
+                        <option value="HELP_REQUESTED">Help Requested</option>
+                        <option value="VIDEO_COMPLETED">Video Completed</option>
+                        <option value="PROCESS_DESIGNER_COMPLETED">Process Designer Completed</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventOutcome">Event Outcome</label>
+                    <select id="eventOutcome" name="eventOutcome" required>
+                        <option value="CORRECT">Correct</option>
+                        <option value="INCORRECT">Incorrect</option>
+                        <option value="COMPLETED_FAST">Completed Fast</option>
+                        <option value="COMPLETED_SLOW">Completed Slow</option>
+                        <option value="VIEWED">Viewed</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="endpointUrl">Pipedream Endpoint URL</label>
+                    <input type="url" id="endpointUrl" name="endpointUrl" placeholder="Enter your Pipedream webhook URL" required>
+                </div>
+
+                <button type="submit" id="submit-btn">Trigger Workflow</button>
+            </form>
+
+            <div id="results-container">
+                <h2>Coach Klaus's Response:</h2>
+                <div id="loader" class="loader" style="display: none;"></div>
+                <pre id="response-output">Awaiting event...</pre>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
