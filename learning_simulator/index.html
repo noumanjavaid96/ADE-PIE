@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Simulator with Coach Klaus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <div class="stats-container">
+                <h3>Confidence Score</h3>
+                <div id="confidence-score-value" class="score-value">50</div>
+                <div class="confidence-bar-container">
+                    <div id="confidence-bar" class="confidence-bar"></div>
+                </div>
+            </div>
+            <div class="coach-container">
+                <h3>Coach Klaus</h3>
+                <div class="coach-avatar"></div>
+                <div id="coach-message" class="coach-message">
+                    Welcome! Let's start your learning journey. Answer the question to begin.
+                </div>
+            </div>
+            <div class="settings">
+                <label for="endpointUrl">Pipedream URL</label>
+                <input type="url" id="endpointUrl" placeholder="Paste your Pipedream webhook URL here">
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Interactive Learning Module</h1>
+            </header>
+            <div id="activity-container" class="activity-container">
+                <div class="loader-container" style="display: none;">
+                    <div class="loader"></div>
+                    <p>Waiting for Coach Klaus...</p>
+                </div>
+                <div class="quiz-container">
+                    <h2 id="question-title">Question 1: The Core Principle</h2>
+                    <p id="question-text">What is the primary benefit of using a serverless workflow for this kind of AI logic?</p>
+                    <div class="answer-options">
+                        <button class="answer-btn" data-outcome="CORRECT">Rapid development and scalability</button>
+                        <button class="answer-btn" data-outcome="INCORRECT">It's always cheaper than servers</button>
+                        <button class="answer-btn" data-outcome="INCORRECT">It has lower latency than a monolith</button>
+                        <button class="answer-btn" data-outcome="INCORRECT">It requires less documentation</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
