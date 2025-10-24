@@ -30,17 +30,9 @@ The simulator is now ready to use!
 
 ## Pipedream Workflow Requirements
 
-For this simulator to function correctly, your Pipedream workflow **must be configured to return a direct HTTP response** with a specific JSON structure.
+For this simulator to function correctly, your Pipedream workflow must be configured to return a direct HTTP response with a specific JSON structure. The latest workflow version provided does this by default.
 
-### 1. Configure the Trigger Response
-
-In your Pipedream workflow's HTTP trigger settings, you must change the **Response Type**. Instead of the default "Static Response," configure it to **return the output of your final "Generate Coaching Response" step**.
-
--   **Setting:** `Return a custom response from a step`
--   **Select Step:** `steps.generate_coaching_response`
--   **Select Value to Return:** `$return_value`
-
-### 2. Expected JSON Response Format
+### Expected JSON Response Format
 
 The UI expects the Pipedream workflow to return a JSON object with the following keys:
 

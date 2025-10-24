@@ -1,10 +1,10 @@
-# Pipedream Implementation Guide: Confidence Score & Coaching AI
+# Pipedream Implementation Guide (v2.0)
 
 ## 1. Overview
 
-This document provides the technical specification for the backend service that calculates a user's Confidence Score and generates dynamic coaching responses. The entire logic is encapsulated within a Pipedream workflow.
+This document provides the technical specification for the backend service that calculates a user's Confidence Score and generates dynamic coaching responses. The entire logic is encapsulated within an updated Pipedream workflow.
 
-This service is designed to be called by the frontend application whenever a user completes a scorable event. It processes the event, updates the user's score, logs the result, and generates a personalized coaching message from "Coach Klaus."
+This service is designed to be called by the `learning_simulator` application whenever a user completes a scorable event. It processes the event, updates the user's score, logs the result, and generates a personalized coaching message from "Coach Klaus."
 
 ---
 
@@ -32,30 +32,37 @@ The frontend must send a JSON object in the request body with the following stru
 
 ```json
 {
-  "userId": "user_12345",
+  "userId": "user_sim_001",
   "eventType": "QUIZ_ANSWERED",
-  "eventOutcome": "CORRECT"
+  "eventOutcome": "CORRECT",
+  "previousConfidenceScore": 50
 }
 ```
 
 -   `userId` (string, required): The unique identifier for the user.
--   `eventType` (string, required): A string describing the type of event that occurred (e.g., `QUIZ_ANSWERED`, `HELP_REQUESTED`, `VIDEO_COMPLETED`).
--   `eventOutcome` (string | number | boolean, required): The result of the event (e.g., `CORRECT`, `INCORRECT`, `85` for a percentage, `true`).
+-   `eventType` (string, required): A string describing the type of event.
+-   `eventOutcome` (string | number | boolean, required): The result of the event.
+-   `previousConfidenceScore` (number, required): The user's confidence score *before* the current event. This is crucial for making the simulation stateful.
 
-### 3.2. Response (Pipedream -> Frontend)
+### 3.2. Response Body (Pipedream -> Frontend)
 
--   **Immediate Response:** The Pipedream trigger is configured to provide an immediate, static response to acknowledge receipt of the event. This prevents the client from timing out while the full workflow executes.
-    -   **Status Code:** `200 OK`
-    -   **Body:** `"OK"`
+The workflow is configured to return a custom JSON response containing the output of the final step. The `learning_simulator` UI expects the following structure:
 
--   **Asynchronous Coaching Response:** The actual coaching message is generated asynchronously. The frontend will need to receive this message via a push mechanism.
-    -   **Proposed Architecture:** The final step of the Pipedream workflow should be modified to push the generated coaching response to a real-time service (e.g., a WebSocket server like Pusher or Ably) that the frontend is subscribed to. The frontend will listen for an event on a user-specific channel (e.g., `coaching-response-user_12345`) to receive the message.
+```json
+{
+  "confidenceScore": 64,
+  "coachingResponse": "That's it! Correctly identifying the benefits of scalability shows you have a strong grasp of this concept. Well done!"
+}
+```
+
+-   `confidenceScore` (number, required): The new, updated confidence score.
+-   `coachingResponse` (string, required): The personalized message from Coach Klaus.
 
 ---
 
-## 4. Workflow Breakdown
+## 4. Workflow Breakdown (v2.0)
 
-The Pipedream workflow consists of three main steps that execute in sequence after being triggered by an HTTP request.
+The Pipedream workflow consists of three main steps that execute in sequence.
 
 ### Step 1: `calculate_confidence_score`
 
@@ -63,23 +70,20 @@ This is a custom Pipedream component responsible for all the scoring logic.
 
 -   **Purpose:** To calculate the user's new Confidence Score based on their most recent action.
 -   **Inputs (Props):**
-    -   `user_id`: Pulled from the trigger event body.
-    -   `event_type`: Pulled from the trigger event body.
-    -   `event_outcome`: Pulled from the trigger event body.
-    -   `previous_confidence_score`: The user's score before this event. **Note:** This needs to be fetched from the database, not hardcoded.
-    -   `smoothing_previous_weight` / `smoothing_new_weight`: The weights for the smoothing formula.
+    -   `user_id`, `event_type`, `event_outcome`: Pulled from the trigger event body.
+    -   `previous_confidence_score`: **Crucially, this should be mapped from the trigger body.** (See Section 5).
 -   **Core Functionality:**
     1.  Assigns a raw score (`eventImpact`) to the incoming event.
-    2.  Calculates the new `confidenceScore` using the smoothing formula.
+    2.  Calculates the new `confidenceScore` using a smoothing formula.
     3.  Determines the user's `coachingZone` (e.g., Z1-Z6) based on the new score.
--   **Output (`$return_value`):** A JSON object containing the full results of the calculation (e.g., `userId`, `confidenceScore`, `coachingZone`, `eventImpact`, `previousScore`).
+-   **Output (`$return_value`):** A JSON object containing the full results of the calculation.
 
 ### Step 2: `neon_postgres`
 
 This step provides data persistence.
 
 -   **Purpose:** To log the results of the confidence score calculation to the database.
--   **Functionality:** It connects to the project's Neon Postgres database and saves the output from the `calculate_confidence_score` step. This is critical for tracking user progress and retrieving the `previous_confidence_score` for the next event.
+-   **Functionality:** It connects to the project's Neon Postgres database and saves the output from the previous step.
 
 ### Step 3: `generate_coaching_response`
 
@@ -87,32 +91,34 @@ This step leverages OpenAI's GPT-4.1 model to generate a dynamic, personalized c
 
 -   **Purpose:** To create an empathetic and context-aware response for the user.
 -   **Functionality:**
-    1.  It constructs a detailed prompt for the LLM using the data from the first step (`confidenceScore`, `coachingZone`, `eventType`, `eventOutcome`).
-    2.  The `systemInstructions` field contains the master prompt that defines the "Coach Klaus" persona and its adaptive behavior based on the user's coaching zone.
-    3.  It sends the request to the OpenAI API and receives a generated text message.
--   **Output:** The final coaching message to be sent to the user. As noted in section 3.2, this output needs to be pushed to the client via a real-time service.
+    1.  It constructs a detailed prompt for the LLM using the data from the first step (`confidenceScore`, `coachingZone`, etc.).
+    2.  The `systemInstructions` field contains the master prompt that defines the "Coach Klaus" persona.
+-   **Output:** The final coaching message to be sent to the user.
 
 ---
 
-## 5. Validation UI
+## 5. Crucial Improvement: Making the Demo Stateful
 
-A simple validation UI has been created to allow for easy testing of the Pipedream workflow.
+For the `learning_simulator` to work correctly and show a score that changes over time, the Pipedream workflow needs one critical modification.
 
--   **Location:** `/ui/index.html`
--   **Purpose:** To send test events to the workflow and visualize the generated coaching response from Coach Klaus.
+The `previous_confidence_score` prop in the `calculate_confidence_score` step is currently hardcoded to `50`. It needs to read the value sent from our simulator instead.
 
-### How to Use
+**How to Fix:**
 
-1.  Open the `ui/index.html` file in a web browser.
-2.  Enter your unique Pipedream webhook URL into the "Pipedream Endpoint URL" field.
-3.  Fill in the `userId`, `eventType`, and `eventOutcome` fields with test data.
-4.  Click the "Trigger Workflow" button.
-5.  The response from Coach Klaus will appear in the results section.
+1.  In the Pipedream workflow editor, go to the `calculate_confidence_score` step.
+2.  Find the `previous_confidence_score` prop.
+3.  Click the prop to open the path selector.
+4.  Change the value from the static number `50` to the following path from the trigger:
+    `{{ steps.trigger.event.body.previousConfidenceScore }}`
 
-### Important Note for Testing
+This will ensure the workflow uses the score sent from the simulator, making the entire feedback loop dynamic and stateful.
 
-For the validation UI to work correctly, the Pipedream workflow must be temporarily configured to return the final coaching response directly.
+---
 
-**By default, the workflow trigger is set to return an immediate `200 OK` static response.** To test with this UI, you must change the trigger's "Response Type" setting from `staticResponse` to return the output of the final step (`steps.generate_coaching_response.$return_value`). This will cause the workflow to wait until the final step is complete before sending the HTTP response, allowing the UI to capture and display the result.
+## 6. Validation UI
 
-**Remember to revert this change** for production use, where an asynchronous push mechanism (e.g., WebSockets) will be used to deliver the response to the client.
+A simple validation UI is available to test the Pipedream workflow.
+
+-   **Location:** `/learning_simulator/index.html`
+-   **Purpose:** To send test events to the workflow and visualize the generated coaching response and updated score.
+-   **How to Use:** Open the file in a browser and paste your Pipedream webhook URL into the input field at the bottom of the sidebar.
